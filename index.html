@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,32 +14,11 @@
   <link href="dist/jquery.bracket.min.css" rel="stylesheet">
   
   <style>
-    [data-bs-theme="gray"] {
-      --bs-body-color: #f8f9fa;
-      --bs-body-color-rgb: #f8f9fa;
-      --bs-body-bg: #4E565D;
-      --bs-body-bg-rgb: #4E565D;
-      --bs-tertiary-bg: #{$blue-600};
-
-      
-      .btn-info {
-        --bs-body-color: #37BBF3;
-        --bs-body-color-rgb: #37BBF3;
-        --bs-body-bg: #37BBF3;
-        --bs-body-bg-rgb: #37BBF3;
-      }
-
-      body {
-        background-color: #F36F37;
-      }
-
-    }
-
     body {
       background-color: #f8f9fa;
     }
     .card {
-      border-radius: 15px;
+      /*border-radius: 15px;*/
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
@@ -63,6 +43,31 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <img class="me-2" src="logo-navbar.png" height="32" href="#">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#inscriptos">Inscriptos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#clasificacion">Clasificación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#llave">Llave final</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sponsors">Sponsors</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
     <div class="col-md-9 mx-auto">
@@ -70,8 +75,8 @@
       <!-- <h1 class="mb-4 text-center text-md-left">Torneo Elías Metz 2023</h1> -->
       
       <!-- Información del Torneo -->
-      <div class="card mb-4">
-        <h3 class="card-header">
+      <div class="card border-primary mb-4">
+        <h3 class="card-header text-white bg-primary">
             Información del torneo
           </h3>
         <div class="card-body">
@@ -105,8 +110,8 @@
       </div>
       
      <!-- Jugadores inscriptos -->
-      <div class="card mb-4" id="inscriptos">
-          <h3 class="card-header">
+      <div class="card border-primary mb-4" id="inscriptos">
+          <h3 class="card-header text-white bg-primary">
             Jugadores Inscriptos
           </h3>
           <div class="card-body">
@@ -366,8 +371,8 @@
       </div>
 
       <!-- Clasificación -->
-      <div class="card mb-4" id="clasificacion">
-        <div class="mb-2 card-header">
+      <div class="card border-primary mb-4" id="clasificacion">
+        <div class="mb-2 card-header text-white bg-primary">
           <h3>Clasificación</h3>
           <ul class="nav nav-tabs card-header-tabs nav-fill" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -499,8 +504,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 12:15
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -524,8 +530,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 13:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -549,8 +556,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 14:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -668,9 +676,10 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 17:15
-                            </font>
+                              </div>
+                              </font>
                           </td>
                           <td>
                             <div class="text-nowrap">
@@ -693,8 +702,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 18:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -718,8 +728,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 19:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -837,8 +848,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 17:15
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -862,8 +874,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 18:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -887,8 +900,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 19:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1006,8 +1020,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 14:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1031,8 +1046,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 16:00
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1056,8 +1072,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 17:15
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1174,8 +1191,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 16:00
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1199,8 +1217,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 18:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1224,8 +1243,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 19:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1342,8 +1362,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 19:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1367,8 +1388,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 21:00
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1392,8 +1414,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 22:15
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1510,8 +1533,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 13:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1535,8 +1559,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 14:45
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1560,8 +1585,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 21:00
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1678,8 +1704,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 18:00
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1703,8 +1730,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 21:15
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1728,8 +1756,9 @@
                             <hr>
                             <font size="-2">
                               Palermo Padel<br>
-                              <font color="#ed4c4c">
+                              <div class=text-primary>
                                 Sábado 23/12/2023 22:30
+                              </div>
                             </font>
                           </td>
                           <td>
@@ -1761,8 +1790,8 @@
       </div>
 
       <!-- 
-      <div class="card mb-4" id="llave">
-        <h3 class="card-header">
+      <div class="card border-primary mb-4" id="llave">
+        <h3 class="card-header text-white bg-primary">
             Llave final
           </h3>
         <div class="card-body">
@@ -1772,8 +1801,8 @@
       </div>
       -->
 
-      <div class="card mb-4" id="sponsors">
-        <h3 class="card-header">
+      <div class="card border-primary mb-4" id="sponsors">
+        <h3 class="card-header text-white bg-primary">
             Sponsors
           </h3>
         <div class="card-body text-center">
