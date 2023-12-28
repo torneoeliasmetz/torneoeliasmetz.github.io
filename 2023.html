@@ -11,6 +11,12 @@
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="dist/jquery.bracket.min.js"></script>
   <link href="dist/jquery.bracket.min.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+  crossorigin="anonymous"></script>
+	<script src="jquery.gracket.js"></script>
+  <link href="jquery.gracket.min.css" rel="stylesheet">
   
   <style>
     [data-bs-theme="gray"] {
@@ -1827,36 +1833,66 @@
 </div>
 
 <script>
-    var doubleElimination = {
-    "teams": [
-      ["Team 1", "Team 2"],
-      ["Team 3", "Team 4"]
+  var singleElimination = {
+    "teams": [                // Equipos
+      ["Team 1", "Team 2"],   // Primer partido
+      ["Team 3", "Team 4"],   // Segundo partido
+      ["Team 5", "Team 6"],
+      ["Team 7", "Team 8"],
+      ["Team 9", "Team 10"],
+      ["Team 11", "Team 12"],
+      ["Team 13", "Team 14"],
+      ["Team 15", "Team 16"]
     ],
-    "results": [            // List of brackets (three since this is double elimination)
-      [                     // Winner bracket
-        [[1, 2], [3, 4]],   // First round and results
-        [[5, 6]]            // Second round
-      ],
-      [                     // Loser bracket
-        [[7, 8]],           // First round
-        [[9, 10]]           // Second round
-      ],
-      [                     // Final "bracket"
-        [                   // First round
-          [11, 12],         // Match to determine 1st and 2nd
-          [13, 14]          // Match to determine 3rd and 4th
+    "results": [            // Lista de llaves (una sola)
+      [                     // Lista de rondas en esta llave
+        [                   // Primera ronda
+          [1-1, 2-0],
+          [0, 0],
+          [0, 0],
+          [0, 0],
+          [0, 0],
+          [0, 0],
+          [0, 0],
+          [0, 0]
         ],
-        [                   // Second round
-          [15, 16]          // LB winner won first round (11-12) so need a final decisive round
+        [                   // Cuartos
+          [0, 0],           
+          [0, 0],     
+          [0, 0],           
+          [0, 0]
+        ],
+        [                   // Semifinales
+          [0, 0],           
+          [0, 0]
+        ],
+        [                   // Final y partido por el tercer puesto
+          [0, 0],           
+          [0, 0]
         ]
       ]
     ]
   }
 
+  function onclick(data) {
+    $('#matchCallback').text("onclick(data: '" + data + "')")
+  }
+
+  function onhover(data, hover) {
+    $('#matchCallback').text("onhover(data: '" + data + "', hover: " + hover + ")")
+  }
+
   $('.demo').bracket({
-    init: doubleElimination
+    init: singleElimination,
+    teamWidth: 100, // number
+    roundMargin: 40, // number
+    matchMargin: 40, // number
+    centerConnectors: true,
+    onMatchClick: onclick,
+    onMatchHover: onhover
   });
 
+  /*
   $('.demo').bracket({
     init: null, // data to initialize
     save: null, // called whenever bracket is modified
@@ -1875,7 +1911,90 @@
     roundMargin: '', // number
     matchMargin: '', // number
   });
+  */
 
+  myData = [
+    [
+      [ {"name" : "Enrico/Carponi", "displaySeed": "1A |", "score" : "0/0/0" },
+        {"name" : "Bergna/Galeano G.", "displaySeed": "2B |", "score" : "0/0/0" } ],
+      
+      [ {"name" : "Vittori L/Barón", "id" : "james-coutry", "seed" : 3},
+        {"name" : "Rodriguez/Goró", "id" : "sam-merrill", "seed" : 4}],
+      
+      [ {"name" : "Vittori A./Albarracín O.", "id" : "anthony-hopkins", "seed" : 5},
+        {"name" : "Albarracín F./Aguilar", "id" : "everett-zettersten", "seed" : 6} ],
+      
+      [ {"name" : "Pertus/Galeano D.", "id" : "john-scott", "seed" : 7},
+        {"name" : "Gauna/Donda", "id" : "teddy-koufus", "seed" : 8}],
+      
+      [ {"name" : "Gaztelumendi/Villagra", "id" : "arnold-palmer", "seed" : 9},
+        {"name" : "Diaz/Vergara", "id" : "ryan-anderson", "seed" : 10} ],
+      
+      [ {"name" : "Botto/Adra", "id" : "jesse-james", "seed" : 1},
+        {"name" : "Fernandez J./Martínez L.", "id" : "scott-anderson", "seed" : 12}],
+      
+      [ {"name" : "Martínez L./Terra", "id" : "josh-groben", "seed" : 13},
+        {"name" : "Aguirre/Fernandez K.", "id" : "sammy-zettersten", "seed" : 14} ],
+      
+      [ {"name" : "Corbalán/Langhi", "id" : "jake-coutry", "seed" : 15},
+        {"name" : "Vallejo/Hutin", "id" : "spencer-zettersten", "seed" : 16}]
+    ],
+    [
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }],
+
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }],
+
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }],
+
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }]
+    ],
+    [
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }],
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }]
+    ],
+    [
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" },
+      {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" }]
+    ],
+    [
+      [ {"name" : "&emsp;&emsp;&emsp;-------&emsp;&emsp;&emsp;", "id" : "", "seed" : "", "displaySeed": "", "score" : "" } ]
+    ]
+  ];
+
+  $(".my_gracket").gracket({ 
+    src: myData,
+
+    // default CSS classes
+    gracketClass : "g_gracket",
+    gameClass : "g_game",
+    roundClass : "g_round",
+    roundLabelClass : "g_round_label",
+    teamClass : "g_team",
+    winnerClass : "g_winner",
+    spacerClass : "g_spacer",
+    currentClass : "g_current",
+    seedClass : "g_seed",
+
+    // radius in pixels
+    cornerRadius : 5,
+
+    // canvas options
+    canvasId : "g_canvas",
+    canvasClass : "g_canvas",
+    canvasLineColor : "#AAAAAA",
+    canvasLineCap : "round",
+    canvasLineWidth : 2,
+    canvasLineGap : 15,
+
+    // an array of round labels
+    roundLabels : ["Octavos", "Cuartos", "Semis", "Final", "Ganadores"]
+  });
 </script>
   
 </body>

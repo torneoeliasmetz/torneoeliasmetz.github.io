@@ -9,9 +9,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!--
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="dist/jquery.bracket.min.js"></script>
   <link href="dist/jquery.bracket.min.css" rel="stylesheet">
+  -->
   
   <style>
     body {
@@ -58,7 +60,7 @@
           <a class="nav-link" href="#clasificacion">Clasificación</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#llave">Llave final</a>
+          <a class="nav-link" href="#llave">Llave final</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#sponsors">Sponsors</a>
@@ -102,7 +104,7 @@
           <a class="btn btn-primary btn-block w-100" href="#clasificacion" role="button">Clasificación</a>
         </div>
         <div class="col-sm-5 col-md-6 mb-2">
-          <a class="btn btn-primary btn-block w-100 disabled" href="#llave" role="button" disabled>Llave final</a>
+          <a class="btn btn-primary btn-block w-100" href="#llave" role="button" disabled>Llave final</a>
         </div>
         <div class="col-sm-5 col-md-6 mb-2">
           <a class="btn btn-primary btn-block w-100" href="#sponsors" role="button">Sponsors</a>
@@ -1897,17 +1899,23 @@
         </p>
       </div>
 
-      <!-- 
       <div class="card border-primary mb-4" id="llave">
-        <h3 class="card-header text-white bg-primary">
+        <h3 id="test" class="card-header text-white bg-primary">
             Llave final
-          </h3>
-        <div class="card-body">
+        </h3>
+        <div class="card-body scrollable-card" style="text-align:center">
+          
+          <iframe src="bracket.html" onload="set_text()" id="bracket-iframe" width="700" style="height: 100vh;position: relative;" frameborder="0" class="overflow-auto"></iframe>
+          
+          <!--
+          <div class="my_gracket overflow-auto"></div>
+          -->
+          <!--
           <div class="demo overflow-auto">
           </div>
+          -->
         </div>
       </div>
-      -->
 
       <div class="card border-primary mb-4" id="sponsors">
         <h3 class="card-header text-white bg-primary">
@@ -1955,56 +1963,121 @@
 </div>
 
 <script>
-    var doubleElimination = {
-    "teams": [
-      ["Team 1", "Team 2"],
-      ["Team 3", "Team 4"]
-    ],
-    "results": [            // List of brackets (three since this is double elimination)
-      [                     // Winner bracket
-        [[1, 2], [3, 4]],   // First round and results
-        [[5, 6]]            // Second round
-      ],
-      [                     // Loser bracket
-        [[7, 8]],           // First round
-        [[9, 10]]           // Second round
-      ],
-      [                     // Final "bracket"
-        [                   // First round
-          [11, 12],         // Match to determine 1st and 2nd
-          [13, 14]          // Match to determine 3rd and 4th
-        ],
-        [                   // Second round
-          [15, 16]          // LB winner won first round (11-12) so need a final decisive round
-        ]
-      ]
-    ]
+  // Obtén el elemento por su ID
+  //var miElemento = document.getElementById("llave1-equipo1");
+
+  // Agrega texto al elemento usando textContent
+  //miElemento.textContent = "Hola, este es un texto agregado desde JavaScript.";
+
+  function set_text()
+  {
+    var myIFrame = document.getElementById('bracket-iframe').contentWindow.document;
+
+    // Octavos llave 1
+    var elemento = myIFrame.getElementById("O-L1-P1");
+    elemento.innerHTML = "Enrico<br>Carponi";
+
+    elemento = myIFrame.getElementById("O-L1-P2");
+    elemento.innerHTML = "Bergna<br>Galeano G.";
+
+    elemento = myIFrame.getElementById("O-L1-F");
+    elemento.innerHTML = "Sábado 30/12 - 11hs";
+    // Octavos llave 2
+    elemento = myIFrame.getElementById("O-L2-P1");
+    elemento.innerHTML = "Vittori&nbspL<br>Barón";
+
+    elemento = myIFrame.getElementById("O-L2-P2");
+    elemento.innerHTML = "Rodriguez<br>Goró";
+
+    elemento = myIFrame.getElementById("O-L2-F");
+    elemento.innerHTML = "Sábado 30/12 - 11hs";
+    // Octavos llave 3
+    elemento = myIFrame.getElementById("O-L3-P1");
+    elemento.innerHTML = "Vittori&nbspA.<br>Albarracín&nbspO.";
+
+    elemento = myIFrame.getElementById("O-L3-P2");
+    elemento.innerHTML = "Albarracín&nbspF.<br>Aguilar";
+
+    elemento = myIFrame.getElementById("O-L3-F");
+    elemento.innerHTML = "Sábado 30/12 - 11hs";
+
+    // Octavos llave 4
+    elemento = myIFrame.getElementById("O-L4-P1");
+    elemento.innerHTML = "Pertus<br>Galeano&nbspD.";
+
+    elemento = myIFrame.getElementById("O-L4-P2");
+    elemento.innerHTML = "Gauna<br>Donda";
+
+    elemento = myIFrame.getElementById("O-L4-F");
+    elemento.innerHTML = "Horario a coordinar";
+
+    // Octavos llave 5
+    elemento = myIFrame.getElementById("O-L5-P1");
+    elemento.innerHTML = "Pertus<br>Galeano&nbspD.";
+
+    elemento = myIFrame.getElementById("O-L5-P2");
+    elemento.innerHTML = "Gauna<br>Donda";
+
+    elemento = myIFrame.getElementById("O-L5-F");
+    elemento.innerHTML = "Sábado 30/12 - 12:15hs";
+
+    // Octavos llave 6
+    elemento = myIFrame.getElementById("O-L6-P1");
+    elemento.innerHTML = "Gaztelumendi<br>Villagra";
+
+    elemento = myIFrame.getElementById("O-L6-P2");
+    elemento.innerHTML = "Diaz<br>Vergara";
+
+    elemento = myIFrame.getElementById("O-L6-F");
+    elemento.innerHTML = "Sábado 30/12 - 12:15hs";
+
+    // Octavos llave 7
+    elemento = myIFrame.getElementById("O-L7-P1");
+    elemento.innerHTML = "Botto<br>Adra";
+
+    elemento = myIFrame.getElementById("O-L7-P2");
+    elemento.innerHTML = "Fernandez&nbspJ.<br>Martínez&nbspL.";
+
+    elemento = myIFrame.getElementById("O-L7-F");
+    elemento.innerHTML = "Sábado 30/12 - 12:15hs";
+
+    // Octavos llave 8
+    elemento = myIFrame.getElementById("O-L8-P1");
+    elemento.innerHTML = "Martínez&nbspL.<br>Terra";
+
+    elemento = myIFrame.getElementById("O-L8-P2");
+    elemento.innerHTML = "Aguirre<br>Fernandez&nbspK.";
+
+    elemento = myIFrame.getElementById("O-L8-F");
+    elemento.innerHTML = "Sábado 30/12 - 12:15hs";
+
+    // Octavos llave 9
+    elemento = myIFrame.getElementById("O-L9-P1");
+    elemento.innerHTML = "Corbalán<br>Langhi";
+
+    elemento = myIFrame.getElementById("O-L9-P2");
+    elemento.innerHTML = "Vallejo<br>Hutin";
+
+    elemento = myIFrame.getElementById("O-L9-F");
+    elemento.innerHTML = "Sábado 30/12 - 12:15hs";
+
+    /*
+    elemento = myIFrame.getElementById("octavos-l1-r");
+    var data = "<div class=\"knockscore\">\
+                    <a class=\"\">5</a>\
+                </div>\
+                <div class=\"knockscore\">\
+                    <a class=\"\">4</a>\
+                </div>\
+                <div class=\"knockscore\">\
+                    <a class=\"\">3</a>\
+                </div>";
+    elemento.innerHTML = data;
+    */
+    //myIFrame.getElementById("octavos-l1-r").innerHTML = "<div class="knockscore"><a class="">AEEA</a></div>";
   }
 
-  $('.demo').bracket({
-    init: doubleElimination
-  });
-
-  $('.demo').bracket({
-    init: null, // data to initialize
-    save: null, // called whenever bracket is modified
-    userData: null, // custom user data
-    onMatchClick: null, // callback
-    onMatchHover: null, // callback
-    decorator: null, // a function
-    skipSecondaryFinal: false,
-    skipGrandFinalComeback: false,
-    skipConsolationRound: false,
-    dir: 'rl', // "rl" or  "lr",
-    disableToolbar: false,
-    disableTeamEdit: false,
-    teamWidth: '', // number
-    scoreWidth: '', // number
-    roundMargin: '', // number
-    matchMargin: '', // number
-  });
-
 </script>
-  
+
 </body>
 </html>
