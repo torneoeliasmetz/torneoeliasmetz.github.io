@@ -205,7 +205,7 @@ h2 {
   background-color: #ffffff;
   padding: 1em;
   border: 1px solid transparent;
-  border-radius: 0.1em;
+  border-radius: 1.0em;
   box-shadow: 0 2px 0 0 #e5e5e5;
   outline: none;
   cursor: pointer;
@@ -288,7 +288,8 @@ h2 {
   content: ':';
   width: 1em;
   text-align: center;
-  padding: 0.2em 0.1em;
+  /*por alguna razon cambiar 0.1 por 1.1 saca el padding del final*/
+  padding: 0.2em 1.1em;
 }
 @media (min-width: 38em) {
   .tournament-bracket__content::after {
