@@ -430,6 +430,7 @@ h2 {
 .tournament-bracket__number {
   display: inline-block;
   padding: 0.2em 0.4em 0.2em;
+  margin-right: 0.2em;
   border-bottom: 0.075em solid transparent;
   font-size: 0.95rem;
   background-color: #F5F5F5;
