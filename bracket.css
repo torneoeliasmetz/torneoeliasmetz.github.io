@@ -284,13 +284,15 @@ h2 {
 .tournament-bracket__content {
   display: flex;
 }
+/*
 .tournament-bracket__content::after {
   content: ':';
+  vertical-align: -50%;
   width: 1em;
   text-align: center;
-  /*por alguna razon cambiar 0.1 por 1.1 saca el padding del final*/
-  padding: 0.2em 1.1em;
+  padding: 2.0em 1.1em;
 }
+*/
 @media (min-width: 38em) {
   .tournament-bracket__content::after {
     order: 1;
@@ -419,6 +421,7 @@ h2 {
 .tournament-bracket__score {
   display: flex;
   align-items: center;
+  vertical-align: -50%;
 }
 .tournament-bracket__team:first-child .tournament-bracket__score {
   flex-direction: row-reverse;
@@ -431,10 +434,15 @@ h2 {
   display: inline-block;
   padding: 0.2em 0.4em 0.2em;
   margin-right: 0.2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
   border-bottom: 0.075em solid transparent;
   font-size: 0.95rem;
   background-color: #F5F5F5;
   border-color: #dddddd;
+}
+.tournament-bracket__number:first-child{
+  margin-left: 1.0em;
 }
 .tournament-bracket__team--winner .tournament-bracket__number {
   background-color: #FFF176;
