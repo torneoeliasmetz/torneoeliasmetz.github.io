@@ -408,6 +408,7 @@ h2 {
   text-decoration: none;
   cursor: help;
   transition: padding 0.2s ease-in-out;
+  white-space: nowrap;
 }
 @media (max-width: 24em) {
   .tournament-bracket__code {
